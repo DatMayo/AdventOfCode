@@ -23,9 +23,9 @@ foreach (var s in splitData)
     var segmentLeftMax = int.Parse(segmentLeft[1]);
 
     var segmentRightMin = int.Parse(segmentRight[0]);
-    var segmenRightMax = int.Parse(segmentRight[1]);
+    var segmentRightMax = int.Parse(segmentRight[1]);
 
-    if ((segmentLeftMin <= segmentRightMin && segmentLeftMax >= segmenRightMax) || (segmentRightMin <= segmentLeftMin && segmentLeftMax <= segmenRightMax)) counter++;
+    if ((segmentLeftMin <= segmentRightMin && segmentLeftMax >= segmentRightMax) || (segmentRightMin <= segmentLeftMin && segmentLeftMax <= segmentRightMax)) counter++;
 }
 
 Console.WriteLine($"Part 1: Solution is {counter}");
