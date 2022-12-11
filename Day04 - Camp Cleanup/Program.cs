@@ -29,3 +29,33 @@ foreach (var s in splitData)
 }
 
 Console.WriteLine($"Part 1: Solution is {counter}");
+
+counter = 0;
+foreach (var s in splitData)
+{
+    var segments = s.Split(',');
+    var segmentLeft = segments[0].Split('-');
+    var segmentRight = segments[1].Split('-');
+
+    var segmentLeftMin = int.Parse(segmentLeft[0]);
+    var segmentLeftMax = int.Parse(segmentLeft[1]);
+
+    var segmentRightMin = int.Parse(segmentRight[0]);
+    var segmentRightMax = int.Parse(segmentRight[1]);
+
+    if (segmentRightMin < segmentLeftMin)
+    {
+        List<int> tmp = new List<int> { segmentRightMin, segmentRightMax, segmentLeftMin, segmentLeftMax };
+        segmentLeftMin = tmp[0];
+        segmentLeftMax = tmp[1];
+        segmentRightMin = tmp[2];
+        segmentRightMax = tmp[3];
+    }
+
+    if (segmentLeftMax >= segmentRightMin)
+    {
+        counter++;
+    }
+}
+
+Console.WriteLine($"Part 2: Solution is {counter}");
